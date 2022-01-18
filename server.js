@@ -100,9 +100,9 @@ client.on("message", async (msg) => {
           console.log(error);
           break;
         }
-    case "hloli":
+    case "hcos":
       try {
-        let pic = await nb.get("lolice")
+        let pic = await nb.get("cosplay")
         msg.channel.send(pic)
         break;
       } catch(error) {
