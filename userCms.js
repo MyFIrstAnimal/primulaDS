@@ -54,3 +54,48 @@ export let roleCreate = function(guild, name){
       });
       msg.channel.send(`role created ${name}`)
 }
+export let guildInfo = function(guild){
+  try {
+    let mguild = await client.guilds.cache.get(`${guild}`);
+    console.log(mguild);
+    let guildEmbed = new Discord.MessageEmbed()
+      .setColor("#FF3361")
+      .setTitle(`${mguild.name}`)
+      .setThumbnail(mguild.iconURL())
+      .addFields(
+        {
+          name: `guild id `,
+          value: `${mguild.id}`,
+        },
+        {
+          name: `available: `,
+          value: `${mguild.available}`,
+        },
+        { name: `region: `, value: `${mguild.region}` },
+        { name: `members count: `, value: `${mguild.memberCount}` },
+        { name: `100k members: `, value: `${mguild.large}` },
+        {
+          name: `verification level: `,
+          value: `${mguild.verificationLevel}`,
+        },
+        {
+          name: `explicit content filter: `,
+          value: `${mguild.explicitContentFilter}`,
+        },
+        {
+          name: `default message notifications: `,
+          value: `${mguild.defaultMessageNotifications}`,
+        },
+        { name: `vanity URL: `, value: `${mguild.vanityURLCode}` },
+        { name: `description: `, value: `${mguild.description}` },
+        { name: `owner id: `, value: `${mguild.ownerID}` }
+      );
+    msg.channel.send(guildEmbed);
+  } catch (error) {
+    let guildEmbed = new Discord.MessageEmbed()
+      .setColor("#FF3361")
+      .setTitle(`error found:`)
+      .setDescription(`${error}`);
+    msg.channel.send(guildEmbed);
+  }
+}
