@@ -116,13 +116,25 @@ client.on("message", async (msg) => {
       }
       break;
     case "create_role":
+      try{
       US.roleCreate(no[1], no[2])
+      } catch(err) {
+        msg.channel.send(err)
+      }
       break;
     case "wiew_roles":
+      try {
       US.rolesWiew(no[1])
+      } catch(err) {
+        msg.channel.send(err)
+      }
       break;
     case "role":
+      try{
       US.roleAdd(no[1], no[2])
+      } catch(err) {
+        msg.channel.send(err)
+      }
       break;
     case "find_user":
       US.findUser(no[1])
