@@ -1,3 +1,4 @@
+
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { RichEmbed } = require("discord.js");
@@ -128,4 +129,3 @@ client.on("message", async (msg) => {
       break;
   }
 });
-client.login(process.env.token);
