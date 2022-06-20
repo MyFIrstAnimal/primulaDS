@@ -47,32 +47,6 @@ client.on("message", async (msg) => {
     }
   }
   switch (no[0]) {
-    case "server_invite":
-      try {
-        let invitelink = await client.channels.cache
-          .get(`${no[1]}`)
-          .createInvite({ unique: true, maxUses: `${no[2]}` });
-        msg.channel.send(`https://discord.gg/${invitelink.code}`);
-      } catch (error) {
-        let userEmbed = new Discord.MessageEmbed()
-          .setColor("#FF3361")
-          .setTitle(`the error found`)
-          .setDescription("params:")
-          .addFields(
-            {
-              name: `command: `,
-              value: `server_invite [channel_id] [invite_members_count]`,
-            },
-            {
-              name: `channel id detected: `,
-              value: `${no[1]}`,
-            },
-            { name: `invite members count detected: `, value: `${no[2]}` },
-            { name: `error: `, value: error }
-          );
-        msg.channel.send(userEmbed);
-      }
-      break;
     case "create_role":
       try{
       roleCreate(no[1], no[2])
@@ -111,5 +85,31 @@ client.on("message", async (msg) => {
           );
         msg.channel.send(userEmbed);
       break;
+      case "server_invite":
+        try {
+          let invitelink = await client.channels.cache
+            .get(`${no[1]}`)
+            .createInvite({ unique: true, maxUses: `${no[2]}` });
+          msg.channel.send(`https://discord.gg/${invitelink.code}`);
+        } catch (error) {
+          let userEmbed = new Discord.MessageEmbed()
+            .setColor("#FF3361")
+            .setTitle(`the error found`)
+            .setDescription("params:")
+            .addFields(
+              {
+                name: `command: `,
+                value: `server_invite [channel_id] [invite_members_count]`,
+              },
+              {
+                name: `channel id detected: `,
+                value: `${no[1]}`,
+              },
+              { name: `invite members count detected: `, value: `${no[2]}` },
+              { name: `error: `, value: error }
+            );
+          msg.channel.send(userEmbed);
+        }
+        break;
   }
 });
