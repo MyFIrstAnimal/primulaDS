@@ -1,7 +1,6 @@
 
 import Discord from "discord.js"
 const client = new Discord.Client();
-import { RichEmbed } from "discord.js"
 import * as US from './userCms.mjs'
 client.on("ready", () => {
   console.log(new Date());
