@@ -101,8 +101,11 @@ export let guildInfo = function(guild){
   }
 }
 export let guildChannels = function(guild){
-  console.log("1")
-  try{
+  console.log("found")
+  let mguild = await client.guilds.cache.get(`${guild}`);
+  console.log(mguild)
+
+  /*try{
     let mguild = await client.guilds.cache.get(`${guild}`);
     let userEmbed = new Discord.MessageEmbed()
         .setColor("#FF3361")
@@ -117,5 +120,5 @@ export let guildChannels = function(guild){
     .setDescription(`${err}`);
     msg.channel.send(errEmbed)
     console.log("3")
-  }
+  }*/
 }
