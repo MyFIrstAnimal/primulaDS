@@ -99,3 +99,19 @@ export let guildInfo = function(guild){
     msg.channel.send(guildEmbed);
   }
 }
+export let guildChannels = function(guild){
+  try{
+    let mguild = await client.guilds.cache.get(`${guild}`);
+    let userEmbed = new Discord.MessageEmbed()
+        .setColor("#FF3361")
+        .setTitle(`channels found:`)
+    mguild.channels.cache.forEach((channel) => userEmbed.addField(`${channel.name}:`, `${channel.id}`));
+    msg.channel.send(userEmbed)
+  } catch(err) {
+    let errEmbed = new Discord.MessageEmbed()
+    .setColor("#FF3361")
+    .setTitle(`error found`)
+    .setDescription(`${err}`);
+    msg.channel.send(errEmbed)
+  }
+}

@@ -38,7 +38,7 @@ client.on("message", async (msg) => {
       case "gd":
         try {
           let mguild = await client.guilds.fetch(no[2]);
-          console.log(mguild);
+          console.log(mguild.cache);
         } catch (err) {
           console.log(err);
         }
@@ -96,6 +96,9 @@ client.on("message", async (msg) => {
       break;
     case "find_user":
       US.findUser(no[1])
+      break;
+    case "guild_channels":
+      US.guildChannels(no[1])
       break;
   }
 });
