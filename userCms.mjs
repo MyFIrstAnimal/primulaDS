@@ -1,4 +1,4 @@
-export let findUser = function(UserA){
+export let findUser = async function(UserA){
     try {
       let user1 = await client.users.fetch(UserA);
       let userEmbed = new Discord.MessageEmbed()
@@ -55,7 +55,7 @@ export let roleCreate = function(guild, name){
       });
       msg.channel.send(`role created ${name}`)
 }
-export let guildInfo = function(guild){
+export let guildInfo = async function(guild){
   try {
     console.log("1")
     let mguild = await client.guilds.cache.get(`${guild}`);
@@ -101,7 +101,7 @@ export let guildInfo = function(guild){
     msg.channel.send(guildEmbed);
   }
 }
-export let guildChannels = function(guild){
+export let guildChannels = async function(guild){
   console.log("found")
   let mguild = await client.guilds.cache.get(`${guild}`);
   console.log(mguild)
