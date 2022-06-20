@@ -98,6 +98,7 @@ client.on("message", async (msg) => {
       US.findUser(no[1])
       break;
     case "guild_channels":
+      console.log("89814042743")
       US.guildChannels(no[1])
       break;
   }
