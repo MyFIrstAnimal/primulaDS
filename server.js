@@ -1,7 +1,7 @@
 
-import Discord from "discord.js"
+const Discord = require("discord.js")
 const client = new Discord.Client();
-import * as US from './userCms.mjs'
+const US = require('./userCms.mjs')
 client.on("ready", () => {
   console.log(new Date());
   console.log(

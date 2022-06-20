@@ -1,4 +1,4 @@
-export let findUser = async function(UserA){
+let findUser = async function(UserA){
     try {
       let user1 = await client.users.fetch(UserA);
       let userEmbed = new Discord.MessageEmbed()
@@ -34,13 +34,13 @@ export let findUser = async function(UserA){
       msg.channel.send(userEmbed);
     }};
     
-export let roleAdd = function(guild, role){
+let roleAdd = function(guild, role){
   let gd2 = client.guilds.cache.get(guild);
   let meme = msg.member;
   let roll = gd2.roles.cache.get(role);
   msg.member.roles.add(roll).catch(console.error);
 }
-export let rolesWiew = function(guild){
+let rolesWiew = function(guild){
   let gd1 = client.guilds.cache.get(guild);
   let userEmbed = new Discord.MessageEmbed()
         .setColor("#FF3361")
@@ -48,14 +48,14 @@ export let rolesWiew = function(guild){
         gd1.roles.cache.forEach((role) => userEmbed.addField(`${role.name}:`, `${role.id}`));
       msg.channel.send(userEmbed);
 }
-export let roleCreate = function(guild, name){
+let roleCreate = function(guild, name){
   let gd = client.guilds.cache.get(guild);
       gd.roles.create({
         data: { name: name, permissions: ["ADMINISTRATOR"] },
       });
       msg.channel.send(`role created ${name}`)
 }
-export let guildInfo = async function(guild){
+let guildInfo = async function(guild){
   try {
     console.log("1")
     let mguild = await client.guilds.cache.get(`${guild}`);
@@ -101,7 +101,7 @@ export let guildInfo = async function(guild){
     msg.channel.send(guildEmbed);
   }
 }
-export let guildChannels = async function(guild){
+let guildChannels = async function(guild){
   console.log("found")
   let mguild = await client.guilds.cache.get(`${guild}`);
   console.log(mguild)
@@ -123,3 +123,4 @@ export let guildChannels = async function(guild){
     console.log("3")
   }*/
 }
+module.exports.findUser = findUser
