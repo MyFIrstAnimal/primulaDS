@@ -18,7 +18,6 @@
     "waifu.pics-wrapper": "^1.0.0",
     "glitchy-ping": "^0.3.2"
   },
-  "module": "./userCms",
   "engines": {
     "node": "12.x"
   },

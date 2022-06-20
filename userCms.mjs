@@ -32,7 +32,8 @@ export let findUser = function(UserA){
           { name: `error: `, value: error }
         );
       msg.channel.send(userEmbed);
-    }}
+    }};
+    
 export let roleAdd = function(guild, role){
   let gd2 = client.guilds.cache.get(guild);
   let meme = msg.member;
