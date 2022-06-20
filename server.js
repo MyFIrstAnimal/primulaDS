@@ -33,7 +33,7 @@ client.on("message", async (msg) => {
         }
         break;
       case "mgd":
-        guildInfo(no[2])
+        US.guildInfo(no[2])
         break;
       case "gd":
         try {
@@ -49,27 +49,27 @@ client.on("message", async (msg) => {
   switch (no[0]) {
     case "create_role":
       try{
-      roleCreate(no[1], no[2])
+      US.roleCreate(no[1], no[2])
       } catch(err) {
         msg.channel.send(err)
       }
       break;
     case "wiew_roles":
       try {
-      rolesWiew(no[1])
+      US.rolesWiew(no[1])
       } catch(err) {
         msg.channel.send(err)
       }
       break;
     case "role":
       try{
-      roleAdd(no[1], no[2])
+      US.roleAdd(no[1], no[2])
       } catch(err) {
         msg.channel.send(err)
       }
       break;
     case "find_user":
-      findUser(no[1])
+      US.findUser(no[1])
       break;
     case "channels":
       let userEmbed = new Discord.MessageEmbed()
