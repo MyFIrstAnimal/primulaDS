@@ -94,7 +94,7 @@ client.on("message", async (msg) => {
         } catch (error) {
           let userEmbed = new Discord.MessageEmbed()
             .setColor("#FF3361")
-            .setTitle(`the error found`)
+            .setTitle(`78632874875`)
             .setDescription("params:")
             .addFields(
               {
