@@ -1,3 +1,4 @@
+const Discord = require("discord.js")
 let findUser = async function(UserA){
     try {
       let user1 = await client.users.fetch(UserA);
@@ -124,3 +125,7 @@ let guildChannels = async function(guild){
   }*/
 }
 module.exports.findUser = findUser
+module.exports.roleAdd = roleAdd
+module.exports.guildChannels = guildChannels
+module.exports.guildInfo = guildInfo
+module.exports.rolesWiew = rolesWiew
