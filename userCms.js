@@ -56,6 +56,7 @@ export let roleCreate = function(guild, name){
 }
 export let guildInfo = function(guild){
   try {
+    console.log("1")
     let mguild = await client.guilds.cache.get(`${guild}`);
     console.log(mguild);
     let guildEmbed = new Discord.MessageEmbed()
