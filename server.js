@@ -1,7 +1,7 @@
 
 const Discord = require("discord.js")
 const client = new Discord.Client();
-const US = require('./userCms.mjs')
+const US = require('./userCms.js')
 client.on("ready", () => {
   console.log(new Date());
   console.log(
