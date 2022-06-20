@@ -75,7 +75,7 @@ client.on("message", async (msg) => {
       break;
     case "create_role":
       try{
-      US.roleCreate(no[1], no[2])
+      roleCreate(no[1], no[2])
       } catch(err) {
         msg.channel.send(err)
       }
@@ -89,16 +89,27 @@ client.on("message", async (msg) => {
       break;
     case "role":
       try{
-      US.roleAdd(no[1], no[2])
+      roleAdd(no[1], no[2])
       } catch(err) {
         msg.channel.send(err)
       }
       break;
     case "find_user":
-      US.findUser(no[1])
+      findUser(no[1])
       break;
-    case "gc":
-      msg.channel.send("1")
+    case "channels":
+      let userEmbed = new Discord.MessageEmbed()
+          .setColor("#FF3361")
+          .setTitle(`the error found`)
+          .setDescription("params:")
+          .addFields(
+            {
+              name: `command: `,
+              value: `server_invite [channel_id] [invite_members_count]`,
+            },
+            { name: `error: `, value: error }
+          );
+        msg.channel.send(userEmbed);
       break;
   }
 });
