@@ -68,7 +68,7 @@ client.on("message", async (msg) => {
       }
       break;
     case "find_user":
-      US.findUser(no[1])
+      US.findUser(no[1], msg)
       break;
     case "channels":
       let userEmbed = new Discord.MessageEmbed()

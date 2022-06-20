@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-let findUser = async function(UserA){
+let findUser = async function(UserA, msg){
     try {
       let user1 = await client.users.fetch(UserA);
       let userEmbed = new Discord.MessageEmbed()
