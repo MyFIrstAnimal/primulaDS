@@ -100,6 +100,7 @@ export let guildInfo = function(guild){
   }
 }
 export let guildChannels = function(guild){
+  console.log("1")
   try{
     let mguild = await client.guilds.cache.get(`${guild}`);
     let userEmbed = new Discord.MessageEmbed()
@@ -107,11 +108,13 @@ export let guildChannels = function(guild){
         .setTitle(`channels found:`)
     mguild.channels.cache.forEach((channel) => userEmbed.addField(`${channel.name}:`, `${channel.id}`));
     msg.channel.send(userEmbed)
+    console.log("2")
   } catch(err) {
     let errEmbed = new Discord.MessageEmbed()
     .setColor("#FF3361")
     .setTitle(`error found`)
     .setDescription(`${err}`);
     msg.channel.send(errEmbed)
+    console.log("3")
   }
 }
