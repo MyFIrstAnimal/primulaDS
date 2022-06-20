@@ -111,5 +111,9 @@ client.on("message", async (msg) => {
           msg.channel.send(userEmbed);
         }
         break;
+        case "restart":
+          console.log("restarting")
+          client.destroy()
+          break;
   }
 });
