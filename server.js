@@ -115,5 +115,6 @@ client.on("message", async (msg) => {
           client.destroy()
           break;
   }
-  client.login(token);
+
 });
+client.login(token);
