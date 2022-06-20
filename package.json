@@ -6,7 +6,6 @@
   "version": "0.0.1",
   "description": "A simple Node app built on Express, instantly up and running.",
   "main": "server.js",
-  "type":"module",
   "scripts": {
     "start": "node server.js"
   },
@@ -19,6 +18,7 @@
     "waifu.pics-wrapper": "^1.0.0",
     "glitchy-ping": "^0.3.2"
   },
+  "module": "./userCms",
   "engines": {
     "node": "12.x"
   },
