@@ -82,7 +82,7 @@ client.on("message", async (msg) => {
       break;
     case "wiew_roles":
       try {
-      US.rolesWiew(no[1])
+      rolesWiew(no[1])
       } catch(err) {
         msg.channel.send(err)
       }
